@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculator</title>
+<link rel="stylesheet" href="calc.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<body>
+    
+    <div class="container">
+
+
+
+        <form name="form" class="peace">
+
+            <div class="display"> 
+                <input type="text" placeholder="0" name="displayResult"/>
+            </div>
+
+            <p class="laju">welcome Laju</p>
+            <p class="peace">welcome peace</p>
+          
+            
+            <div class="buttons">
+                <div class="row">
+                    <input type="button" name="logb" value="log" onClick="myLog()">
+                    <input type="button" name="sinb" value="sin" onClick="mySin()">
+                    <input type="button" name="cosb" value="cos" onClick="myCos()">
+                    <input type="button" name="tanb" value="tan" onClick="myTan()">
+                    <input type="button" class="clrbtn" name="clr" value="C" onClick="clearFunc()">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="br1" value="(" onClick="calcNumbers(br1.value)">
+                    <input type="button" name="br2" value=")" onClick="calcNumbers(br2.value)">
+                    <input type="button" name="be" value="e" onClick="myE()">
+                    <input type="button" name="percb" value="%" onClick="myPerc(percb.value)">
+                    <input type="button" name="divb" value="/" onClick="calcNumbers(divb.value)">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="bpi" value="π" onClick="myPi()">
+                    <input type="button" name="b7" value="7" onClick="calcNumbers(b7.value)">
+                    <input type="button" name="b8" value="8" onClick="calcNumbers(b8.value)">
+                    <input type="button" name="b9" value="9" onClick="calcNumbers(b9.value)">
+                    <input type="button" name="mulb" value="*" onClick="calcNumbers(mulb.value)">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="bcube" value="⅓" onClick="myCubeRoot()">
+                    <input type="button" name="b4" value="4" onClick="calcNumbers(b4.value)">
+                    <input type="button" name="b5" value="5" onClick="calcNumbers(b5.value)">
+                    <input type="button" name="b6" value="6" onClick="calcNumbers(b6.value)">
+                    <input type="button" name="subb" value="-" onClick="calcNumbers(subb.value)">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="bpow" value="^2" onClick="myPow()">
+                    <input type="button" name="b1" value="1" onClick="calcNumbers(b1.value)">
+                    <input type="button" name="b2" value="2" onClick="calcNumbers(b2.value)">
+                    <input type="button" name="b3" value="3" onClick="calcNumbers(b3.value)">
+                    <input type="button" name="addb" value="+" onClick="calcNumbers(addb.value)">
+                </div>
+
+                <div class="row">
+                    <input type="button" name="bsqrt" value="√" onClick="myRoot()">
+                    <input type="button" name="b0" value="0" onClick="calcNumbers(b0.value)">
+                    <input type="button" name="bfact" value="x!" onClick="myFact()">
+                    <input type="button" name="pointb" value="." onClick="calcNumbers(pointb.value)">
+                    <input type="button" class="blue" value="=" onClick="displayResult.value=eval(displayResult.value)">
+                </div>
+                
+                
+            </div>
+        </form>
+    </div>
+    <style>
+        .start_btn{
+            margin-top: 20px;
+            color: white;
+            border: none;
+            height: 40px;
+            border-radius: 7%;
+
+        }
+
+       
+        .mycontainer {
+            opacity: 1;
+            margin-left: 0px;
+  
+    }
+
+
+    </style>
+    
+    <div class="start_btn">
+        <button onclick="peaceFunc()">Calculator</button>
+    </div>
+
+
+    <script>
+        // const show_btn = document.querySelector(".start_btn button");
+        const show_peace = document.querySelector(".container");
+        
+        // document.write(show_peace.classList);
+        
+        // document.write(show_peace.classList);
+        // show_btn.onclick = ()=>{
+        //     // show_peace.classList.remove("container");
+        //     show_peace.classList.add("mycontainer");
+
+        //     console.log(show_peace.classList);
+            
+        // }
+
+        peaceFunc = function(){
+            show_peace.classList.add("mycontainer");
+        }
+
+
+
+
+
+
+         function clearFunc(){
+
+            form.displayResult.value = null;
+
+        }
+        
+        function calcNumbers(result){
+
+         form.displayResult.value=form.displayResult.value+result;
+
+        }
+       
+       function myLog(){
+            form.displayResult.value= Math.log(form.displayResult.value);
+
+       }
+       
+       function mySin(){
+            form.displayResult.value+= Math.sin(form.displayResult.value);
+
+       }
+
+       function myCos(){
+            form.displayResult.value= Math.cos(form.displayResult.value);
+
+       }
+
+       function myTan(){
+            form.displayResult.value+= Math.tan(form.displayResult.value);
+
+       }
+
+       function myPerc(){
+        form.displayResult.value = form.displayResult.value/100;
+       }
+
+       function myE(){
+            form.displayResult.value += 2.71828182846;
+       }
+
+       function myPi(){
+            form.displayResult.value+=  3.142857142857143;
+       }
+      
+       function myLn(){
+            form.displayResult.value+=  3.142857142857143;
+       }
+      
+       function myPow(){
+            form.displayResult.value *=  form.displayResult.value;
+       }
+
+       function myRoot(){
+            form.displayResult.value =  Math.sqrt(form.displayResult.value);
+       }
+
+       function myCubeRoot(){
+            form.displayResult.value =  Math.cbrt(form.displayResult.value);
+       }
+     
+       function myFact(){
+        var fact = 1;
+                for( i = 1; i <= form.displayResult.value; i++ ){
+                    fact = fact * i;
+                }
+                form.displayResult.value = fact;
+        }  
+            
+    
+
+    </script>
+
+  
+</body>
+</html>
